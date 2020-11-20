@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON(JavaScript Object Notation) Concept</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h2>JavaScript Object Notation</h2>
+    <script>
+        //JSON convertion(string)
+        const user = {
+            id: 26545, 
+            name: "James", 
+            address: {
+                road: "28/A",
+                house: "ABCD Place"
+            },
+            friendsAge: [15, 14, 18, 19],
+            firnds: ["Roger", "William", "Hussy", "Jack"]
+            };
+            // {"id":26545,"name":"James"}
+        const userJSON = JSON.stringify(user);//making js object notation.
+        console.log(userJSON);
+
+        //convert string to JS Object
+        const userFormJSON = JSON.parse(userJSON); 
+        console.log(userFormJSON);
+    </script>
+</body>
+</html>
