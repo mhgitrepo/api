@@ -7,22 +7,27 @@
 </head>
 <body>
     <h2>Username List</h2>
-    <ul id="usernames-container">
+    <ul id="users-container">
         <!-- <li>James</li> -->
         
     </ul>
+
+    <!-- <ul id="users-email">
+
+    </ul> -->
     <script>
         // fetch('https://jsonplaceholder.typicode.com/todos/1')
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         // .then(json => console.log(json))
         .then(json => displayUser(json))
-
+        // .then(json => displayEmail(json))
+        
         function displayUser(users){
             // console.log("users", users);
-            const userNames = users.map(users => users.username);
+            var userNames = users.map(user => user.username);
             // console.log("usernames", userNames);
-            const ul = document.getElementById("usernames-container");
+            const ul = document.getElementById("users-container");
             for (let i = 0; i < userNames.length; i++) {
                 const username = userNames[i];
                 const li = document.createElement("li");
@@ -30,6 +35,17 @@
                 ul.appendChild(li);
             }
         };
+
+        // function displayEmail(users){
+        //     const userEmails = users.map(user => user.email);
+        //     const ul = document.getElementById("users-email");
+        //     for (let i = 0; i < userEmails.length; i++) {
+        //         const useremail = userEmails[i];
+        //         const li = document.createElement("li");
+        //         li.innerText = useremail; 
+        //         ul.appendChild(li);
+        //     }
+        // };
     </script>
 </body>
 </html>
