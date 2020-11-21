@@ -15,6 +15,7 @@
         .then(response => response.json())
         .then(json => displayUser(json))
         .catch(error =>(console.log(error))) //if you don't fulfill the request, then show us the result or error detail;
+        // .catch((error) => alert("Please try again later."));
         
         function displayUser(users){
             const userNames = users.map(user => user.username);
