@@ -25,7 +25,15 @@
         
         function displayUser(users){
             // console.log("users", users);
-            var userNames = users.map(user => user.username);
+            const userNames = users.map(user => user.username);
+            /*
+            const userNames = [];
+            for (let i = 0; i < users.length; i++) {
+                const user = users[i];
+                const result = user.username;
+                userNames.push(result); 
+            }
+            */
             // console.log("usernames", userNames);
             const ul = document.getElementById("users-container");
             for (let i = 0; i < userNames.length; i++) {
